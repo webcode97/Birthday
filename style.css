@@ -10,6 +10,11 @@
     --icing: #f2f2f2;
     --stroke: #1a1a1a;
   }
+ 
+  html {
+    font-size: 16px;
+  }
+
   body {
     --frosting: hsl(var(--frosting-hue, 0), 100%, 55%);
     --lightness: 50;
@@ -22,28 +27,18 @@
     --glow: hsla(var(--glow-hue), calc(var(--glow-saturation) * 1%), calc(var(--glow-lightness) * 1%), var(--glow-alpha));
     --transparent: hsla(0, 0%, 0%, var(--transparency-alpha));
     display: flex;
-    /* overflow: hidden; */
-    align-items: center;
-    justify-content: center;
-    /* min-height: 100vh; */
-    background: hsl(180, 30%, calc(var(--lightness, 50) * 1%));
-  }
-  html {
-    font-size: 16px;
-  }
-  
-  body {
-    display: flex;
     padding: 0;
     margin: 0;
     align-items: center;
     flex-direction: column;
-    min-width: 100vh;
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
     font-family: "Londrina Solid", cursive;
     position: relative;
     background: #0d1117;
     overflow: hidden !important;
+    background: linear-gradient(10deg,#430e4d,#4d0721);
+    
   }
   
   .bg-video-wrap {
@@ -53,12 +48,14 @@
     height: 100vh;
     /* background: url(https://designsupply-web.com/samplecontent/vender/codepen/20181014.png) no-repeat center center/cover; */
     z-index: -4444;
+  
   }
   video {
-    width: 100%;
+    min-width: 100%;
+    /* width: 100%; */
     min-height: 100vh;
     z-index: 1;
-  
+
   }
   .overlay {
     width: 100%;
@@ -66,7 +63,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image: linear-gradient(45deg, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 50%);
+    /* background-image: linear-gradient(45deg, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 50%); */
+    background-image: linear-gradient(45deg, rgb(71 13 81 / 60%) 50%, rgb(55 7 3 / 50%) 50%);
     background-size: 3px 3px;
     z-index: 2;
   }
@@ -541,7 +539,9 @@
       width: 100%;
       position: relative;
   }
-
+  .birthday-button {
+    transform: scale(0.5) !important;
+  }
   .text {
       width: auto;
 
@@ -565,19 +565,49 @@
   }
   .hb-container .ballon:nth-of-type(1) {
     top: -150px;
-    left: -3rem;
+    left: -5rem;
   }
   .hb-container .ballon:nth-of-type(2) {
-    top: 21rem;
-    left: -3rem;
+    top: 6rem;
+    left: -5rem;
+  }
+  .hb-container .ballon:nth-of-type(3) {
+    top: -12rem;
+    right: -2rem;
+    
+    top: -3rem;
+    right: -3rem;
+
   }
   .hb-container .ballon:nth-of-type(4) {
-    top: 21rem;
-    right: -4rem;
+    top: 4rem;
+    right: -5rem;
+    top: 19rem;
+    right: 1rem;
   }
   .pause {
       top: 53px;
   }
+
+  .bg-video-wrap video{
+
+       /* to make video center
+    https://stackoverflow.com/questions/7911225/fullscreen-background-video-and-keep-it-centered
+    */
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+  }
+
 
 }
 

@@ -17,7 +17,7 @@ const {
       'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605876/match-strike-trimmed.mp3'
     ),
     TUNE: new Audio(
-      './Sana-Helwa.mp3'
+      'Sana-Helwa.mp3'
     ),
     ON: new Audio('https://assets.codepen.io/605876/switch-on.mp3'),
     BLOW: new Audio(
